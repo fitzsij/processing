@@ -13,15 +13,22 @@ class Walker {
   }
   
   void step(){
-    int choice = int (random(4));
-    if (choice==0){
-      x++;
-    } else if (choice==1){
-      x--;
-    } else if (choice==2){
-      y++;
-    } else if (choice==3){
-      y--;
-    }
+    int stepX = int(random(3))-1;
+    int stepY = int(random(3))-1;
+    x += stepX;
+    y += stepY;
   }
+}
+
+Walker w;
+
+void setup(){
+  size(640,360);
+  w= new Walker();
+  background(255);
+}
+
+void draw(){
+  w.step();
+  w.display();
 }
